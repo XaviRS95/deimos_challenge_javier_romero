@@ -10,6 +10,9 @@ def sortByTimestamp(current_registers, new_register):
 
     current_registers.append(new_register)
     sorted_registers = sorted(current_registers, key=get_timestamp, reverse=True)
+    print('------------------------------------------------------------------------')
+    print(sorted_registers)
+    print('------------------------------------------------------------------------')
     return sorted_registers
 
 
@@ -36,7 +39,7 @@ def haversine_distance(coords1, coords2):
     # Fórmula Haversine que devuelve la distancia en metros.
     a = math.sin(dlat / 2) ** 2 + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(dlon / 2) ** 2
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
-    distance = R * c * 1888
+    distance = R * c * 1000
 
     return distance
 

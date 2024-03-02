@@ -1,16 +1,13 @@
 from pymongo import MongoClient
 from datetime import datetime
-import os
 
-# Connect to MongoDB
+#Script utilizado para introducir los datos en el docker de MongoDB
+
 client = MongoClient('mongodb://localhost:27017/')
 
-# Create or select a database
 db = client.get_database('car_locations')
 
-# Create or select a collection
 collection = db.get_collection('car_last_date')
-
 
 with open('../caso5_results.txt', 'r') as file:
     for line in file:
@@ -21,7 +18,3 @@ with open('../caso5_results.txt', 'r') as file:
             'car_id': row[0],
             'last_date': datetime.strptime(last_date, "%d/%m/%Y %H:%M:%S")
         })
-
-
-
-
