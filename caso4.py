@@ -10,9 +10,6 @@ def sortByTimestamp(current_registers, new_register):
 
     current_registers.append(new_register)
     sorted_registers = sorted(current_registers, key=get_timestamp, reverse=True)
-    print('------------------------------------------------------------------------')
-    print(sorted_registers)
-    print('------------------------------------------------------------------------')
     return sorted_registers
 
 
