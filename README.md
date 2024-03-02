@@ -23,6 +23,10 @@ sudo docker build -t my-mongodb-image .
 sudo docker run -d -p 27017:27017 --name my-mongodb-container my-mongodb-image
 ```
 
+## Desplegar la API para los casos 6 y 8:
+```bash
+uvicorn fastapi_main:app
+```
 
 
 ## Casos:
